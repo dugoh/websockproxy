@@ -103,6 +103,9 @@ class MainHandler(websocket.WebSocketHandler):
         ping_future = delay_future(time.time()+PING_INTERVAL, self.do_ping)
         loop.add_future(ping_future, lambda: None)
 
+    def check_origin(self, origin):
+        return True
+
     def do_ping(self, timestamp):
         self.ping(str(timestamp))
 
