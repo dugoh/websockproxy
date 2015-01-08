@@ -186,7 +186,7 @@ if __name__ == '__main__':
     args = sys.argv
     args.append('--log_file_prefix=/var/log/relay/relay-server.log')
     tornado.options.parse_command_line(args)
-    application.listen(9999)
+    application.listen(80)
     loop = tornado.ioloop.IOLoop.instance()
     try:
         loop.start()
